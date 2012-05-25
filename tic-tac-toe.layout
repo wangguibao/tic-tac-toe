@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Board.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="6112" topLine="93" />
+	</File>
+	<File name="Board.h" open="0" top="0" tabpos="2">
+		<Cursor position="1559" topLine="38" />
+	</File>
+	<File name="Chess.h" open="0" top="0" tabpos="0">
+		<Cursor position="36" topLine="0" />
+	</File>
+	<File name="NearlyThreat.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="200" topLine="0" />
+	</File>
+	<File name="NearlyThreat.h" open="0" top="0" tabpos="0">
+		<Cursor position="154" topLine="0" />
+	</File>
+	<File name="Robot.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="262" topLine="17" />
+	</File>
+	<File name="Robot.h" open="0" top="0" tabpos="7">
+		<Cursor position="56" topLine="0" />
+	</File>
+	<File name="Threat.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="19" topLine="0" />
+	</File>
+	<File name="Threat.h" open="0" top="0" tabpos="0">
+		<Cursor position="156" topLine="0" />
+	</File>
+	<File name="tic_tac_toeApp.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="466" topLine="0" />
+	</File>
+	<File name="tic_tac_toeApp.h" open="1" top="1" tabpos="4">
+		<Cursor position="552" topLine="0" />
+	</File>
+	<File name="tic_tac_toeMain.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="7777" topLine="25" />
+	</File>
+	<File name="tic_tac_toeMain.h" open="0" top="0" tabpos="3">
+		<Cursor position="2528" topLine="63" />
+	</File>
+	<File name="wxsmith\tic_tac_toedialog.wxs" open="0" top="0" tabpos="0">
+		<Cursor position="282" topLine="126" />
+	</File>
+</CodeBlocks_layout_file>

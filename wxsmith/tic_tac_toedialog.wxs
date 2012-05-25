@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="tic_tac_toeDialog">
+		<title>wxWidgets app</title>
+		<bg>#FFCC00</bg>
+		<id_arg>0</id_arg>
+		<object class="wxBoxSizer" variable="BoxSizer1" member="yes">
+			<object class="sizeritem">
+				<object class="wxGridSizer" variable="GridSizer1" member="no">
+					<cols>3</cols>
+					<rows>3</rows>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BitmapButton1" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON2" variable="BitmapButton2" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON3" variable="BitmapButton3" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON4" variable="BitmapButton4" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON5" variable="BitmapButton5" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON6" variable="BitmapButton6" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON7" variable="BitmapButton7" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON8" variable="BitmapButton8" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON9" variable="BitmapButton9" member="yes">
+							<default>1</default>
+							<size>85,85</size>
+							<bg>wxSYS_COLOUR_WINDOW</bg>
+							<handler function="OnBitmapButtonClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>3</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer2" member="yes">
+					<orient>wxVERTICAL</orient>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON1" variable="ButtonReplay" member="yes">
+							<label>Play Again</label>
+							<handler function="OnButtonReplayClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>4</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticLine" name="ID_STATICLINE1" variable="StaticLine1" member="yes">
+							<size>10,-1</size>
+						</object>
+						<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>4</border>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+							<label>About</label>
+							<handler function="OnAbout" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>4</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>4</border>
+			</object>
+		</object>
+	</object>
+</wxsmith>
