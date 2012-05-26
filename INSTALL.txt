@@ -1,5 +1,5 @@
 How to Install and Build From Source
-============
+===========
 
 This project is based on wxWidgets 2.9.3, an open-source cross-platform GUI library written in C++, but it also has a lot of bindings to other languages. To develop programs with wxWidgets one must first install the library in local storage. Pre-2.9 release has prebuilt libraries that are ready to work with, but since 2.9.3, you have to install the source and do a local build yourself. You can find latest source releases from http://www.wxwidgets.org.
 
@@ -15,7 +15,7 @@ Download Code::Blocks from http://www.codeblocks.org/downloads. For windows ther
 Install Code::Blocks to your desktop.
 
 2. Download wxWidgets source and build
-=============
+===========
 
 1 Download latest wxWidgets source package from http://www.wxwidgets.org/downloads/, say, wxWidgets-2.9.3.zip
 2 Extract the zip package, for example, to D:\code\wxWidgets-2.9.3
@@ -57,7 +57,7 @@ Close
 There are also tutorials about setting up wxWidgets libraries with Code::Blocks, just google it.
 
 4. Create a wxWidgets project in Code::Blocks
-=============
+===========
 
 Start Code::Blocks, new->project->wxWidgets project, go. The wxWidgets project wizard appears.
 
@@ -86,10 +86,10 @@ Start Code::Blocks, new->project->wxWidgets project, go. The wxWidgets project w
     4-11 Build your application and make sure the compilation succeeds.
 
 5. Install source and build
-=============
+===========
 
     5-1 First Close the tic-tac-toe project. 
-    5-2 Download latest source from this repository, copy all .cpp, .h and .rc files to your tic-tac-toe project directory.
+    5-2 Download latest source from this repository, copy all .cpp, .h and .rc files to your tic-tac-toe project directory, copy all files in wxsmith\ subdir to your project wxsmith\ subdir, potentially overwriting the tic_tac_toedialog.wxs
     5-3 Reopen tic-tac-toe project, add .cpp and .h files to your project
     5-4 Rebuild.
 
