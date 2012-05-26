@@ -1,0 +1,95 @@
+How to Install and Build From Source
+============
+
+This project is based on wxWidgets 2.9.3, an open-source cross-platform GUI library written in C++, but it also has a lot of bindings to other languages. To develop programs with wxWidgets one must first install the library in local storage. Pre-2.9 release has prebuilt libraries that are ready to work with, but since 2.9.3, you have to install the source and do a local build yourself. You can find latest source releases from http://www.wxwidgets.org.
+
+Another prerequist is the IDE. Code::Blocks is a fantastic C++ programming IDE and since it has builtin wxWidgets UI generator - wxSmith and wxFormBuilder, its not unreasonable to choose Code::Blocks. Even if you don't write wxWidgets applications, it's still an excellent C++ programming environment, better than Dev-C++, IMHO.
+
+So here are the detailed steps for you to install and build the game from source.
+
+1. Install Code::Blocks
+===========
+
+Download Code::Blocks from http://www.codeblocks.org/downloads. For windows there are two links to choose from, select the one with MinGW so you don't have to download MinGW.
+
+Install Code::Blocks to your desktop.
+
+2. Download wxWidgets source and build
+=============
+
+1 Download latest wxWidgets source package from http://www.wxwidgets.org/downloads/, say, wxWidgets-2.9.3.zip
+2 Extract the zip package, for example, to D:\code\wxWidgets-2.9.3
+3 Build wxWidgets libraries with MinGW.
+
+    3-1 Choose appropriate build options in D:\code\wxWidgets-2.9.3\build\msw\config.gcc
+    
+    Typically you alter only 4 options: SHARED, UNICODE, BUILD and MONOLITHIC. These options are important because later when you create a new wxWidgets project, you have to choose among several options to suit your build.
+    SHARED: Whether wxWidgets library is built to shared library (DLL) or static library (.a). Shared libraries make executables smaller, but as this document [http://www.wxwidgets.org/docs/technote/install.htm] says, you will have to worry about distributing potentially very large libraries with your application, and on both Unix and Windows there is potential for time-wasting confusion. So if you can, compile your application statically: a good linker (such as VC++'s) will strip out redundant code and produce a reasonably small executable.
+    UNICODE: Build UNICODE version
+    BUILD: Build debug or release version of wxWidgets. If you intend to debug your program, build a debug version, else release version.
+    MONOLITHIC: Whether the final library will be packed into a huge monolithic one or several separate components.
+    
+    In my case, I choose no-shared, unicode, debug build, and no-monolithic.
+    
+    3-2 Set envrionment variabls to MinGW executables, and build wxWidgets.
+    
+    Assume you have installed Code::Blocks to E:\program files\codeblocks, open a command prompt window, set the Path env like this:
+    C:\Documents and Settings\guibao>set Path=%Path%;E:\program files\codeblocks\MinGW\bin
+
+    Cd to wxWidgets source tree and build:
+    C:\Documents and Settings\Guibao>D:
+    
+    D:\>cd code\wxWidgets-2.9.3\build\msw
+    D:\code\wxWidgets-2.9.3\build\msw>mingw32-make -f makefile.gcc
+    
+    If everything goes OK, after 1 hour or 2 you will be done and the built libraries lies in D:\code\wxWidgets-2.9.3\lib\gcc_lib
+
+3. Set wxWidgets library path in Code::Blocks
+Start Code::Blocks, menu->settings->Global variables...
+Click the "New" Button after 'current variable', give it the name wx£¬OK
+For the wx variable, the Builtin fields should be filled like this:
+    Base: D:\code\wxWidgets-2.9.3
+    include: D:\code\wxWidgets-2.9.3\include
+    lib: D:\code\wxWidgets-2.9.3\lib
+
+Close
+
+There are also tutorials about setting up wxWidgets libraries with Code::Blocks, just google it.
+
+4. Create a wxWidgets project in Code::Blocks
+=============
+
+Start Code::Blocks, new->project->wxWidgets project, go. The wxWidgets project wizard appears.
+
+    4-1 On the first page, Next
+    4-2 On the second page, you have to choose the wxWidgets version you use. Select wxWidgets 2.9.x (SVN Version), next
+    4-3 On the second page, type in the project title. To cope with this project, the title must be tic-tac-toe, case sensitive. You have to use this title because the wizard creates several header and source files using this title, and those are part of the files in the repository. Later you are supposed to replace your local files with the ones in this repository.
+    Next
+    4-4 Fill in your personal information so the wizard automatically generates file comments for you. Next
+    4-5 Preferred GUI Builder: wxSmith
+        Application Type: Dialog based
+        Next
+    4-6 wxWidgets's location: Use $(#wx). This reflects what you set up in the 3rd step. Next
+    4-7 In this page you have to choose between debug or release configuration. This relies on which option you selected when you build your wxWidgets library. Choose carefully, because the wizard will check your wxWidgets location, if it cannot find a suitable target location, the project won't compile. In my case, I built wxWidgets a debug build, so I only choose debug. Next
+    4-8 In this page there are even more setting relating to your wxWidgtes build options.
+        Use wxWidgets DLL: If you built your library with SHARED option, check this box
+        wxWidgets is built as a monolithic library: If you chose MONOLITHIC option building your library, check this box
+        Enable unicode: If your build is a UNICODE enabled, check this box
+        
+        Check 'Configure Advanced Options' and uncheck all other unmentioned boxes
+        Next
+    4-9 Advanced Options (GCC only)
+            use __WXDEBUG__ and debug wxWidgets lib: If you intend to debug wxWidgets library, check this box
+        Release Target: GUI mode applicaton
+        Next
+    4-10 Select wxJpeg and wxTiff, Finish
+    4-11 Build your application and make sure the compilation succeeds.
+
+5. Install source and build
+=============
+
+    5-1 First Close the tic-tac-toe project. 
+    5-2 Download latest source from this repository, copy all .cpp, .h and .rc files to your tic-tac-toe project directory.
+    5-3 Reopen tic-tac-toe project, add .cpp and .h files to your project
+    5-4 Rebuild.
+
