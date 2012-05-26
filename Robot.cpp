@@ -28,7 +28,7 @@ int Robot::Move(const Board &board)
      */
     for (threatIter = xThreatList.begin(); threatIter != xThreatList.end();
          threatIter++) {
-        if (board.empty(threatIter->missing.id)) {
+        if (board.Empty(threatIter->missing.id)) {
             return threatIter->missing.id;
         }
     }
@@ -79,7 +79,7 @@ int Robot::Move(const Board &board)
         int max = -1;
         unsigned int j;
         for (j = 1; j <= Board::CHESS_CNT; j++) {
-            if (board.empty(j) == true) {
+            if (board.Empty(j) == true) {
                 nearlyThreatNumber[j] = board.TryDetectNearlyThreat(j);
             }
             else {

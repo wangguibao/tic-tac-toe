@@ -146,7 +146,7 @@ void tic_tac_toeDialog::OnBitmapButtonClick(wxCommandEvent& event)
         return;
     }
 
-    if (board.Freezed() == true || board.empty(id) == false) {
+    if (board.Freezed() == true || board.Empty(id) == false) {
         return;
     }
 

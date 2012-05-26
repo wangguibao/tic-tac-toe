@@ -33,7 +33,7 @@ public:
     {
         return xSideNearlyThreatList;
     }
-    bool empty (int gridId) const;
+    bool Empty (int gridId) const;
     int TryDetectNearlyThreat(int id) const;
     WhichSideTurn GetWhichSideTurn() const {return whichSideTurn;}
     void FlipWhichSideTurn()

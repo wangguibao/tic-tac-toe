@@ -29,7 +29,7 @@ void Board::InitBoard()
  * @param gridId is the grid id, counted from 1 to 9
  * @return true if the grid is empty
  */
-bool Board::empty(int gridId) const
+bool Board::Empty(int gridId) const
 {
     return ((oSideBoardStateBit & (1 << (gridId))) == 0 &&
             (xSideBoardStateBit & (1 << (gridId))) == 0);
@@ -45,98 +45,98 @@ int Board::TryDetectNearlyThreat(int id) const
     int count = 0;
     switch (id) {
         case 1:
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 count++;
             }
 
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 count++;
             }
 
-            if (empty(id + 4) && empty(id + 8)) {
+            if (Empty(id + 4) && Empty(id + 8)) {
                 count++;
             }
             break;
         case 2:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 count++;
             }
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 count++;
             }
             break;
         case 3:
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 count++;
             }
 
-            if (empty(id + 2) && empty(id + 4)) {
+            if (Empty(id + 2) && Empty(id + 4)) {
                 count++;
             }
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 count++;
             }
             break;
         case 4:
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 count++;
             }
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 count++;
             }
             break;
         case 5:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 count++;
             }
 
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 count++;
             }
-            if (empty(id - 4) && empty(id + 4)) {
+            if (Empty(id - 4) && Empty(id + 4)) {
                 count++;
             }
-            if (empty(id - 2) && empty(id + 2)) {
+            if (Empty(id - 2) && Empty(id + 2)) {
                 count++;
             }
             break;
         case 6:
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 count++;
             }
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 count++;
             }
             break;
         case 7:
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 count++;
             }
 
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 count++;
             }
-            if (empty(id - 2) && empty(id - 4)) {
+            if (Empty(id - 2) && Empty(id - 4)) {
                 count++;
             }
             break;
         case 8:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 count++;
             }
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 count++;
             }
             break;
         case 9:
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 count++;
             }
 
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 count++;
             }
-            if (empty(id - 4) && empty(id - 8)) {
+            if (Empty(id - 4) && Empty(id - 8)) {
                 count++;
             }
             break;
@@ -161,21 +161,21 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
 {
     switch (id) {
         case 1:
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 1, type),
                                            Chess(id + 2, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 3, type),
                                            Chess(id + 6, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id + 4) && empty(id + 8)) {
+            if (Empty(id + 4) && Empty(id + 8)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 4, type),
                                            Chess(id + 8, type));
@@ -184,13 +184,13 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
 
             break;
         case 2:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id + 1, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 3, type),
                                            Chess(id + 6, type));
@@ -198,20 +198,20 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 3:
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id - 2, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id + 2) && empty(id + 4)) {
+            if (Empty(id + 2) && Empty(id + 4)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 2, type),
                                            Chess(id + 4, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id + 3) && empty(id + 6)) {
+            if (Empty(id + 3) && Empty(id + 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 3, type),
                                            Chess(id + 6, type));
@@ -219,13 +219,13 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 4:
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id + 3, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 1, type),
                                            Chess(id + 2, type));
@@ -233,26 +233,26 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 5:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id + 1, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id + 3, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 4) && empty(id + 4)) {
+            if (Empty(id - 4) && Empty(id + 4)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 4, type),
                                            Chess(id + 4, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 2) && empty(id + 2)) {
+            if (Empty(id - 2) && Empty(id + 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 2, type),
                                            Chess(id + 2, type));
@@ -260,13 +260,13 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 6:
-            if (empty(id - 3) && empty(id + 3)) {
+            if (Empty(id - 3) && Empty(id + 3)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id + 3, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id - 2, type));
@@ -274,20 +274,20 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 7:
-            if (empty(id + 1) && empty(id + 2)) {
+            if (Empty(id + 1) && Empty(id + 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id + 1, type),
                                            Chess(id + 2, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id - 6, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 2) && empty(id - 4)) {
+            if (Empty(id - 2) && Empty(id - 4)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 2, type),
                                            Chess(id - 4, type));
@@ -295,13 +295,13 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 8:
-            if (empty(id - 1) && empty(id + 1)) {
+            if (Empty(id - 1) && Empty(id + 1)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id + 1, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id - 6, type));
@@ -309,20 +309,20 @@ void Board::DetectNearlyThreat(int id, Chess::ChessType type,
             }
             break;
         case 9:
-            if (empty(id - 1) && empty(id - 2)) {
+            if (Empty(id - 1) && Empty(id - 2)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 1, type),
                                            Chess(id - 2, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
 
-            if (empty(id - 3) && empty(id - 6)) {
+            if (Empty(id - 3) && Empty(id - 6)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 3, type),
                                            Chess(id - 6, type));
                 nearlyThreatList.push_back(nearlyThreat);
             }
-            if (empty(id - 4) && empty(id - 8)) {
+            if (Empty(id - 4) && Empty(id - 8)) {
                 NearlyThreat nearlyThreat(Chess(id, type),
                                            Chess(id - 4, type),
                                            Chess(id - 8, type));
@@ -373,14 +373,14 @@ void Board::UpdateBoardStateImpl(int id,
          nearlyThreatIter != nearlyThreatList.end();
          nearlyThreatIter++) {
         if (nearlyThreatIter->missing1.id == id &&
-            empty(nearlyThreatIter->missing2.id)) {
+            Empty(nearlyThreatIter->missing2.id)) {
             Threat threat(nearlyThreatIter->chess,
                           nearlyThreatIter->missing1,
                           nearlyThreatIter->missing2);
             threatList.push_back(threat);
             nearlyThreatIter = nearlyThreatList.erase(nearlyThreatIter);
         }
-        else if (empty(nearlyThreatIter->missing1.id) &&
+        else if (Empty(nearlyThreatIter->missing1.id) &&
                  nearlyThreatIter->missing2.id == id) {
             Threat threat(nearlyThreatIter->chess,
                           nearlyThreatIter->missing2,
